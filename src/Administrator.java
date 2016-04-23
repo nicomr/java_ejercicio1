@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class Administrator extends Empleado {
 	private double hs_extra;
@@ -14,5 +15,23 @@ public class Administrator extends Empleado {
 		this.hs_month = hs_month;
 	}
 	private double hs_month;
+	
+	public double getSueldo(){
+		
+		return getBase_salary()*((getHs_extra() * 1.5)+ getHs_month()) / getHs_month();
+		
+	}
+	public void cargaDatos() {
+		super.cargaDatos();
+		Scanner s = new Scanner(System.in);
+		System.out.println("Ingresar horas extras");
+		hs_extra = Double.parseDouble(s.nextLine());
+		this.setHs_extra(hs_extra);
+		System.out.println("Ingresar horas del mes");
+		hs_month = Double.parseDouble(s.nextLine());
+		this.setHs_month(hs_month);
+//		s.close();
+		
+	}
 
 }

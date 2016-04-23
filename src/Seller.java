@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class Seller extends Empleado {
 	private double perc_com;
@@ -14,6 +15,24 @@ public class Seller extends Empleado {
 		this.total_sell = total_sell;
 	}
 	private double total_sell;
+	
+	public double getSueldo(){
+		
+		return getBase_salary() + (getPerc_com() * getTotal_sell() /100);
+		
+	}
+	public void cargaDatos() {
+		super.cargaDatos();
+	    Scanner s = new Scanner(System.in);
+	    System.out.println("ingrese porcentaje comision");
+	    perc_com = Double.parseDouble(s.nextLine());
+	    this.setPerc_com(perc_com);
+	    System.out.println("ingrese total ventas");
+	    total_sell = Double.parseDouble(s.nextLine());
+	    this.setTotal_sell(total_sell);
+//	    s.close();
+	    
+	}
 	
 
 }

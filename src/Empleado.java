@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Empleado {
+public  abstract class Empleado {
 	private int dni;
 	public int getDni() {
 		return dni;
@@ -26,7 +26,7 @@ public class Empleado {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public float getBase_salary() {
+	public double getBase_salary() {
 		return base_salary;
 	}
 	public void setBase_salary(double base_salary) {
@@ -36,6 +36,7 @@ public class Empleado {
 	private String lastname;
 	private String email;
 	private double base_salary;
+    
 	
 	public void cargaDatos() {
 		Scanner s = new Scanner(System.in);
@@ -43,21 +44,23 @@ public class Empleado {
 		String name= "", lastname="", email="";
 		double base_salary=0;
 		System.out.println("Ingrese DNI");
-		s.nextInt(dni);
+		dni = Integer.parseInt(s.nextLine());
 		this.setDni(dni);
 		System.out.println("Ingrese Nombre");
-		s.next(name);
+		name = s.nextLine();
 		this.setName(name);
 		System.out.println("Ingrese Apellido");
-		s.next(lastname);
+		lastname = s.nextLine();
 		this.setLastname(lastname);
 		System.out.println("Ingrese mail");
-		s.next(email);
+		email = s.nextLine();
 		this.setEmail(email);
 		System.out.println("Ingrese Salario base");
-		s.nextBigDecimal(base_salary);
+		base_salary = Double.parseDouble(s.nextLine());
 		this.setBase_salary(base_salary);
+		//s.close();
 		
 	}
+	public abstract double getSueldo();
 
 }
