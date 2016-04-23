@@ -43,11 +43,12 @@ public class Main {
 
 	}
 	private static void getList(Empleado[] empleados, int i) {
+		System.out.println("Listado de Empleados: \n");
 		for (int j = 0; j < i; j++) {
 			System.out.println("DNI: " + empleados[j].getDni());
 			System.out.println("Nombre: " + empleados[j].getName());
 			System.out.println("Apellido: " + empleados[j].getLastname());
-			System.out.println("Sueldo: " + empleados[j].getSueldo());
+			System.out.println("Sueldo: " + empleados[j].getSueldo() + "\n");
 			
 		}
 	}
