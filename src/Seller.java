@@ -25,12 +25,9 @@ public class Seller extends Empleado {
 		super.cargaDatos();
 	    Scanner s = new Scanner(System.in);
 	    System.out.println("ingrese porcentaje comision");
-	    perc_com = Double.parseDouble(s.nextLine());
-	    this.setPerc_com(perc_com);
+	    this.setPerc_com(Double.parseDouble(s.nextLine()));
 	    System.out.println("ingrese total ventas");
-	    total_sell = Double.parseDouble(s.nextLine());
-	    this.setTotal_sell(total_sell);
-//	    s.close();
+	    this.setTotal_sell(Double.parseDouble(s.nextLine()));
 	    
 	}
 	

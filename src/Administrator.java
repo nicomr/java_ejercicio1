@@ -25,12 +25,9 @@ public class Administrator extends Empleado {
 		super.cargaDatos();
 		Scanner s = new Scanner(System.in);
 		System.out.println("Ingresar horas extras");
-		hs_extra = Double.parseDouble(s.nextLine());
-		this.setHs_extra(hs_extra);
+		this.setHs_extra(Double.parseDouble(s.nextLine()));
 		System.out.println("Ingresar horas del mes");
-		hs_month = Double.parseDouble(s.nextLine());
-		this.setHs_month(hs_month);
-//		s.close();
+		this.setHs_month(Double.parseDouble(s.nextLine()));
 		
 	}
 
