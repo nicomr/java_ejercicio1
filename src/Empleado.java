@@ -40,25 +40,16 @@ public  abstract class Empleado {
 	
 	public void cargaDatos() {
 		Scanner s = new Scanner(System.in);
-		int dni= 0;
-		String name= "", lastname="", email="";
-		double base_salary=0;
 		System.out.println("Ingrese DNI");
-		dni = Integer.parseInt(s.nextLine());
-		this.setDni(dni);
+		this.setDni(Integer.parseInt(s.nextLine()));
 		System.out.println("Ingrese Nombre");
-		name = s.nextLine();
-		this.setName(name);
+		this.setName(s.nextLine());
 		System.out.println("Ingrese Apellido");
-		lastname = s.nextLine();
-		this.setLastname(lastname);
+		this.setLastname(s.nextLine());
 		System.out.println("Ingrese mail");
-		email = s.nextLine();
-		this.setEmail(email);
+		this.setEmail(s.nextLine());
 		System.out.println("Ingrese Salario base");
-		base_salary = Double.parseDouble(s.nextLine());
-		this.setBase_salary(base_salary);
-		//s.close();
+		this.setBase_salary(Double.parseDouble(s.nextLine()));
 		
 	}
 	public abstract double getSueldo();
