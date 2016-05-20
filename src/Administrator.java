@@ -1,3 +1,4 @@
+package entidades;
 import java.util.Scanner;
 
 public class Administrator extends Empleado {

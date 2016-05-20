@@ -1,20 +1,21 @@
+package entidades;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
 
-	private static Scanner s;
+//	private static Scanner s;
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
 		Scanner s = new Scanner(System.in);
-		Empleado[] empleados = new Empleado[20];
+		ArrayList <Empleado> empleados = new ArrayList <Empleado>();
 		Administrator adm = new Administrator();
 		Seller sell = new Seller();
-		int op = 1, i=0, sel=0;
+		int op = 1, sel=0;
 
 
-		while (op != 0 && i < empleados.length) {
+		while (op != 0) {
 
 			do {
 			System.out.println("Ingrese 1 para Administrativo. \n Ingrese 2 para Vendedor");
@@ -22,31 +23,30 @@ public class Main {
 			} while (sel != 1 && sel != 2);
 			if (sel==1) {
 				adm.cargaDatos();
-				empleados[i] = adm;
+				empleados.add(adm);
 
 			}
 			else {
 				sell.cargaDatos();
-				empleados[i] = sell;
+				empleados.add(sell);
 
 			}
-			i++;
 			System.out.println("Ingrese 0 para terminar");
 			op = Integer.parseInt(s.nextLine());
 
 		}
 		s.close();
-		getList(empleados, i);
+		getList(empleados);
 
 
 	}
-	private static void getList(Empleado[] empleados, int i) {
+	private static void getList(ArrayList<Empleado> empleados) {
 		System.out.println("Listado de Empleados: \n");
-		for (int j = 0; j < i; j++) {
-			System.out.println("DNI: " + empleados[j].getDni());
-			System.out.println("Nombre: " + empleados[j].getName());
-			System.out.println("Apellido: " + empleados[j].getLastname());
-			System.out.println("Sueldo: " + empleados[j].getSueldo() + "\n");
+		for (Empleado e: empleados) {
+			System.out.println("DNI: " + e.getDni());
+			System.out.println("Nombre: " + e.getName());
+			System.out.println("Apellido: " + e.getLastname());
+			System.out.println("Sueldo: " + e.getSueldo() + "\n");
 
 		}
 	}
